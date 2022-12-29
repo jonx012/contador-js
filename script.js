@@ -13,19 +13,23 @@ function contar(){
         res.innerHTML = "<p><strong>Não é possível fazer a contagem!</strong></p>"
     } else {
         res.innerHTML = "Contando:<br>"
+        
         if (passoN <= 0) {
             alert("[Error] Dado(s) inválido")
             res.innerHTML = "<p><strong>Não é possível fazer a contagem!</strong></p>"
-        } else if (inicioN < fimN) {
+            exit()
+        } 
+        
+        if (inicioN < fimN) {
             for (cont = inicioN; cont <= fimN; cont += passoN) {
                 res.innerHTML += ` ${cont} \u{1F449}`
-                res.innerHTML += "\u{1F3C1}"
             }
         } else {
             for (cont = inicioN; cont >= fimN; cont -= passoN) {
                 res.innerHTML += ` ${cont} \u{1F449}`
-                res.innerHTML += "\u{1F3C1}"
             }
         }
+
+        res.innerHTML += "\u{1F3C1}"
     }
 }
